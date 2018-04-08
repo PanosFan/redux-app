@@ -1,5 +1,22 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins";
+}
+
+body {
+	line-height: 1.5;
+	width: 100%;
+	font-size: 1.1em;
+	background-color: #cccccc;
+}
+
+.error {
+	color: red;
+}
+
+.apiSpan {
+	color: black;
 }

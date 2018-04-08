@@ -1,10 +1,8 @@
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
 
-const initialState = {
-	toggle : false
-}
 
-const reducer = (state=initialState, action) => {
+
+const navbarReducer = (state={toggle : false}, action) => {
 	switch (action.type) {
 		case 'CLICKED':
 			return Object.assign({}, state, {toggle: !state.toggle})
@@ -13,6 +11,10 @@ const reducer = (state=initialState, action) => {
 	}	
 }
 
-const store = createStore(reducer);
+const omdbReducer = (state={}, action) => {
+	return state;
+}
+
+const store = createStore(combineReducers({navbarReducer, omdbReducer}));
 
 export default store;

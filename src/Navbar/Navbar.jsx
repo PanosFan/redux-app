@@ -22,8 +22,6 @@ class Navbar extends Component {
 				       	<div className="span" id="three"></div>
 				      </span>
 				     </button>
-				 		
-					
 
 				    <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 				       <ul className="navbar-nav">
@@ -41,7 +39,7 @@ class Navbar extends Component {
 				         </li>
 				         <li className="nav-item">
 				           <NavLink exact activeClassName="active-link" to="/weather-forecast">Forecast</NavLink>
-				         </li>
+				         </li>				         
 				       </ul>          
 				    </div>
 				</nav>           
@@ -52,14 +50,14 @@ class Navbar extends Component {
 
 const mapStateToProps = (state) => {
 	return{
-		toggler: state.toggle
+		toggler: state.navbarReducer.toggle
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return{
 		handleclick: () => {
-			dispatch({type:'CLICKED'})
+			dispatch({type:'CLICKED'})			
 		}
 	}
 }

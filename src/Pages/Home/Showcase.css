@@ -1,0 +1,19 @@
+.Showcase {
+	min-height: 350px;
+	background: url("../../Images/showcase.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;	
+	font-size: 1.3em;
+}
+.Showcase h1{
+	color: whitesmoke;
+	padding-top: 90px;
+	padding-bottom: 0.5em;
+	font-weight: bold;
+}
+
+.Showcase p {
+	color: whitesmoke;
+	
+}

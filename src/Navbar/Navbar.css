@@ -1,0 +1,92 @@
+.Navbar {
+  margin-bottom: 80px;
+}
+
+#main-navbar {
+  min-height: 80px;
+  background-color: black; }
+  #main-navbar li {
+    margin: 0 20px; }
+    #main-navbar li a {
+      margin-top: 7px;
+      color: whitesmoke; }
+      #main-navbar li a:hover {
+        color: #019fb6;
+        text-decoration: none; }
+      #main-navbar li a:after {
+        display: block;
+        content: '';
+        border-bottom: solid 3px #019fb6;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out; }
+
+#main-navbar li a:hover:after {
+  transform: scaleX(1.2); }
+
+.navbar-brand {
+  padding-left: 2%;
+  color: #019fb6;
+  cursor: default; }
+
+.navbar-toggler-icon .span {
+  height: 3px;
+  background: #cccccc;
+  transition: all 0.5s ease-out;
+  margin: 3px 5px; }
+
+#one {
+  margin-top: 7px;
+  margin-left: 0px;
+  width: 100%; }
+
+#two {
+  width: 40%;
+  margin-left: 0; }
+
+#three {
+  width: 70%;
+  margin-left: 0; }
+
+.navbar-toggler:hover #two,
+.navbar-toggler:hover #three {
+  width: 100%; }
+
+.navbar-toggler-icon.on #one {
+  transform: rotate(45deg) translateX(5px) translateY(5px);
+  width: 100%; }
+
+.navbar-toggler-icon.on #two {
+  opacity: 0; }
+
+.navbar-toggler-icon.on #three {
+  transform: rotate(-45deg) translateX(4px) translateY(-4px);
+  width: 100%; }
+
+.navbar .navbar-collapse {
+  text-align: center; }
+
+.navbar-nav {
+  margin-right: 5%; }
+
+.navbar-toggler {
+  outline: 0 !important; }
+
+
+.active-link {
+  color: #019fb6 !important; 
+}
+
+@media (max-width: 991px) {
+  #main-navbar li a:hover:after {
+    transform: scaleX(0.18); }
+
+  .navbar-nav {
+    margin-top: 3%; }
+
+  .navbar-nav {
+    margin-right: 0; } }
+
+      #main-navbar li {
+    margin: 10px 20px; }
+
+/*# sourceMappingURL=style.css.map */

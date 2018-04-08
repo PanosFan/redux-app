@@ -1,0 +1,22 @@
+img {
+	width: 100%;
+	height: auto;
+}
+
+#cards {
+	padding:20px 0;
+	background-color: #333;
+}
+
+#cards h3 {
+	color: whitesmoke;
+	padding-top: 15px;
+}
+
+#row-2 {
+	padding-top: 40px;
+}
+
+#first-row {
+	padding: 30px 0;
+}

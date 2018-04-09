@@ -21,11 +21,11 @@ class Omdb extends Component {
 					</div>
 				</div>
 
-				{/* <ul>
+				<ul>
 					{this.props.ratings.map((rating, index) => {
 						return <li key={index}><span className="error">{rating.Source}:</span> {rating.Value}</li>
 					})}
-				</ul> */}
+				</ul>
 			</div>
 		);
 	}
@@ -54,22 +54,26 @@ const mapDispatchToProps = (dispatch) => {
 			axios.get(`http://www.omdbapi.com/?t=${query}&apikey=${Api_Key}`)
 			.then(res => {
 				console.log(res)
-				dispatch({
-					type: 'SAVE_MOVIE',
-					title: res.data.Title,
-					country: res.data.Country,
-					writer: res.data.Writer,
-					actors: res.data.Actors,
-					error: res.data.Error,
-					ratings: res.data.Ratings
-				})
-			})
-			.catch(error => {
-				dispatch({
-					type: 'SAVE_MOVIE',					
-					ratings: []
-				})
-			})
+				if(res.data.Response==="True") {
+					dispatch({
+						type: 'SAVE_MOVIE',
+						title: res.data.Title,
+						country: res.data.Country,
+						writer: res.data.Writer,
+						actors: res.data.Actors,
+						error: res.data.Error,
+						ratings: res.data.Ratings
+					})
+				}
+				else{
+					dispatch({
+						type: 'SAVE_MOVIE',
+						error: res.data.Error,
+						ratings: []
+					})
+				}
+				
+			})			
 		}
 	}
 }

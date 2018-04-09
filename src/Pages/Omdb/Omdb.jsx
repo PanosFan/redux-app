@@ -16,16 +16,18 @@ class Omdb extends Component {
 						{this.props.actors && <p className="error">Actors: <span className="apiSpan">{this.props.actors}</span></p>}
 						{this.props.country && <p className="error">Country: <span className="apiSpan">{this.props.country}</span></p>}
 						{this.props.writer && <p className="error">Writer: <span className="apiSpan">{this.props.writer}</span></p>}
-						<p className="error">{this.props.error}</p>
+						{this.props.error && <p className="error">{this.props.error}</p>}
 						
 					</div>
 				</div>
 
-				<ul className={this.props.ratings.length>0 ? "" : "no-display"}>
+				
+				{this.props.ratings.length>0 && <ul>
 					{this.props.ratings.map((rating, index) => {
 						return <li key={index}><span className="error">{rating.Source}:</span> {rating.Value}</li>
 					})}
-				</ul>
+				</ul>}
+
 			</div>
 		);
 	}

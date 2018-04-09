@@ -82,7 +82,7 @@ export default class Github extends React.Component {
 							{this.state.name && <p className="error">Name: <span className="apiSpan">{this.state.name}</span></p>}
 							{this.state.login && <p className="error">Login Name: <span className="apiSpan">{this.state.login}</span></p>}
 							{this.state.repos && <p className="error">Repositories: <span className="apiSpan">{this.state.repos}</span></p>}
-							{this.state.repos_url && <p className="error">Github Page: <a className="apiSpan" href={this.state.repos_url} target="_blank">{this.state.repos_url}</a></p>}						
+							{this.state.repos_url && <p className="error">Github Page: <a className="apiSpan" href={this.state.repos_url} target="_blank">{this.state.repos_url}</a></p>}
 							<p className="error">{this.state.error}</p>
 						</div>
 					</div>

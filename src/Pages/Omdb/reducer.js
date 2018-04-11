@@ -1,5 +1,5 @@
 export const omdbReducer = (state={
-	movieName : '',
+	movieName : undefined,
 	title : undefined,		
 	actors : undefined,
 	country : undefined,

@@ -10,10 +10,10 @@ class Form extends Component {
 					<input onChange={this.props.handleChange} type="text" name="mainName" placeholder={this.props.placeholder1}/>	
 					<br/>
 
-					<input onChange={this.props.handleChange} className={this.props.classCall} type="text" name="mainCountry" placeholder={this.props.placeholder2}/>	
+					<input onChange={this.props.handleChange2} className={this.props.classCall} type="text" name="mainCountry" placeholder={this.props.placeholder2}/>	
 					<br className={this.props.classCall} />
 
-					<select onChange={this.props.handleChange} name="units" className={this.props.classCall}>
+					<select onChange={this.props.handleChange3} name="units" className={this.props.classCall}>
 						<option value="metric">Metric</option>
   						<option value="imperial">Imperial</option>
 					</select>

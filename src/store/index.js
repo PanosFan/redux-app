@@ -1,7 +1,7 @@
 import {createStore, combineReducers} from 'redux';
-import {navbarReducer} from '../Navbar/reducer';
+import {githubReducer} from '../Pages/Github/reducer';
 import {omdbReducer} from '../Pages/Omdb/reducer';
 
 
-const store = createStore(combineReducers({navbarReducer, omdbReducer}));
+const store = createStore(combineReducers({githubReducer, omdbReducer}));
 export default store;

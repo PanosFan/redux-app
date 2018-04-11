@@ -8,7 +8,7 @@ export const omdbReducer = (state={
 	ratings : []
 	}, action) => {	
 	switch (action.type) {
-		case 'INPUT_CHANGE':
+		case 'MOVIENAME_INPUT_CHANGE':
 			return Object.assign({}, state, {movieName: action.input})
 
 		case 'SAVE_MOVIE':

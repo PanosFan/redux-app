@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import {connect} from 'react-redux';
 
 import './Navbar.css';
 
 class Navbar extends Component {
 
-	
+	state = {
+		toggler : false
+	}
+
+	handleclick = () => {
+		this.setState((prevState) => {
+		  return {toggler: !prevState.toggler};
+		});
+	}
 	render () {
 		return (
 			<div className="Navbar">
@@ -15,8 +22,8 @@ class Navbar extends Component {
 
 				    <span className="navbar-brand">Brand-Name</span>
 
-				    <button onClick={this.props.handleclick} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				      <span className={this.props.toggler? "navbar-toggler-icon on" : "navbar-toggler-icon"}> 
+				    <button onClick={this.handleclick} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				      <span className={this.state.toggler? "navbar-toggler-icon on" : "navbar-toggler-icon"}> 
 				       	<div className="span" id="one"></div>
 				        <div className="span" id="two"></div>
 				       	<div className="span" id="three"></div>
@@ -47,20 +54,6 @@ class Navbar extends Component {
 		);
 	}
 }
+   
 
-const mapStateToProps = (state) => {
-	return{
-		toggler: state.navbarReducer.toggle
-	}
-}
-
-const mapDispatchToProps = (dispatch) => {
-	return{
-		handleclick: () => {
-			dispatch({type:'CLICKED'})			
-		}
-	}
-}
-           
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default Navbar;

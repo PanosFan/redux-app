@@ -51,7 +51,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleInputChage: (e) => {
-			dispatch({ type: 'INPUT_CHANGE', input: e.target.value});
+			dispatch({ type: 'MOVIENAME_INPUT_CHANGE', input: e.target.value});
 		},
 		handleSubmit: (e, query) => {
 			e.preventDefault();			

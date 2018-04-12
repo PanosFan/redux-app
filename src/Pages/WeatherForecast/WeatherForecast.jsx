@@ -34,10 +34,8 @@ const WeatherForecast = (props) => {
 						})}	
 								
 					</div>
-			</div>
-			
+			</div>			
 		);
-	
 }
 
 

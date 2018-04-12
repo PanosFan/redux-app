@@ -4,27 +4,27 @@ import {connect} from 'react-redux';
 import Form from '../../Forms/Form';
 import action from './action';
 
-class Github extends React.Component {
+const Github = (props) => {
 
 
-	render(){
+	
 		return(
 			<div>				
 				<div className="Github container-fluid">
 					<div className="row">
 						<div className="col-sm-6">
-							<Form handleChange={this.props.handleInputChage} callApi={(e) => this.props.handleSubmit(e, this.props.userName)} placeholder1="Name" classCall="no-display"/>
-							{this.props.name && <p className="error">Name: <span className="apiSpan">{this.props.name}</span></p>}
-							{this.props.login && <p className="error">Login Name: <span className="apiSpan">{this.props.login}</span></p>}
-							{this.props.repos && <p className="error">Repositories: <span className="apiSpan">{this.props.repos}</span></p>}
-							{this.props.repos_url && <p className="error">Github Page: <a className="apiSpan" href={this.props.repos_url} target="_blank">{this.props.repos_url}</a></p>}
-							{this.props.error && <p className="error">{this.props.error}</p>}
+							<Form handleChange={props.handleInputChage} callApi={(e) => props.handleSubmit(e, props.userName)} placeholder1="Name" classCall="no-display"/>
+							{props.name && <p className="error">Name: <span className="apiSpan">{props.name}</span></p>}
+							{props.login && <p className="error">Login Name: <span className="apiSpan">{props.login}</span></p>}
+							{props.repos && <p className="error">Repositories: <span className="apiSpan">{props.repos}</span></p>}
+							{props.repos_url && <p className="error">Github Page: <a className="apiSpan" href={props.repos_url} target="_blank">{props.repos_url}</a></p>}
+							{props.error && <p className="error">{props.error}</p>}
 						</div>
 					</div>
 				</div>
 			</div>
 		);
-	}
+	
 }
 
 

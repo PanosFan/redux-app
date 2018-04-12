@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Home.css';
 
 
@@ -7,12 +7,9 @@ import Footer from '../../Footer/Footer';
 
 
 
-class Home extends Component {
+const Home = (props) => {
 
 	
-
-
-	render () {
 		return (
 			<div className="Home text-center">		
 				<Showcase/>	
@@ -48,7 +45,7 @@ class Home extends Component {
 				<Footer/>					
 			</div>
 		);
-	}
+	
 }
 
 

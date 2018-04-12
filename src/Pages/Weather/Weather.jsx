@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Weather.css';
 import Form from '../../Forms/Form';
 import {connect} from 'react-redux';
@@ -7,25 +7,25 @@ import action from './action';
 // using special unit, because if I used just unit, then the state would change and render on the fly, and that would be a bug, to change the 
 // unit description before the submit
 
-class Weather extends Component {
+const Weather = (props) => {
 
-	render(){
+	
 		return(
 			<div className="Weather container-fluid">
 				<div className="row">
 					<div className="col-sm-6">
-						<Form callApi={(e) => this.props.handleSubmit(e, this.props.city_input, this.props.country_input, this.props.unit_input)} handleChange={this.props.handleCityChage} handleChange2={this.props.handleCountryChage} handleChange3={this.props.handleUnitChage} placeholder1="City" placeholder2="Country"/>
-						{this.props.city && this.props.country && <p className="error">Location: <span className="apiSpan">{this.props.city}, {this.props.country}</span></p>}
-						{this.props.temperature && <p className="error">Temperate: <span className="apiSpan">{this.props.temperature} { this.props.special_unit==="metric" ? <span>&#x2103;</span> : <span>&#x2109;</span>}</span></p>}
-						{this.props.humidity && <p className="error">Humidity: <span className="apiSpan">{this.props.humidity} %</span></p>}
-						{this.props.wind_speed && <p className="error">Wind speed: <span className="apiSpan">{this.props.wind_speed} { this.props.special_unit==="metric" ? <span>m/s</span> : <span>m/h</span>}</span></p>}
-						{this.props.description && <p className="error">Description: <span className="apiSpan">{this.props.description}</span></p>}
-						{this.props.error && <p className="error">{this.props.error}</p>}						
+						<Form callApi={(e) => props.handleSubmit(e, props.city_input, props.country_input, props.unit_input)} handleChange={props.handleCityChage} handleChange2={props.handleCountryChage} handleChange3={props.handleUnitChage} placeholder1="City" placeholder2="Country"/>
+						{props.city && props.country && <p className="error">Location: <span className="apiSpan">{props.city}, {props.country}</span></p>}
+						{props.temperature && <p className="error">Temperate: <span className="apiSpan">{props.temperature} { props.special_unit==="metric" ? <span>&#x2103;</span> : <span>&#x2109;</span>}</span></p>}
+						{props.humidity && <p className="error">Humidity: <span className="apiSpan">{props.humidity} %</span></p>}
+						{props.wind_speed && <p className="error">Wind speed: <span className="apiSpan">{props.wind_speed} { props.special_unit==="metric" ? <span>m/s</span> : <span>m/h</span>}</span></p>}
+						{props.description && <p className="error">Description: <span className="apiSpan">{props.description}</span></p>}
+						{props.error && <p className="error">{props.error}</p>}						
 					</div>
 				</div>
 			</div>
 		);
-	}
+	
 }
 
 

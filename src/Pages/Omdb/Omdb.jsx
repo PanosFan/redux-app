@@ -1,36 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Form from '../../Forms/Form';
 import './Omdb.css';
 import {connect} from 'react-redux';
 import action from './action';
 
-class Omdb extends Component {
+const Omdb = (props) => {
 
-	render () {
+	
 		return(
 			<div className="Omdb container-fluid">
 				<div className="row">
 					<div className="col-sm-6">
-						<Form handleChange={this.props.handleInputChage} callApi={(e) => this.props.handleSubmit(e, this.props.movieName)} placeholder1="Movie" classCall="no-display"/>
-						{this.props.title && <p className="error">Title: <span className="apiSpan">{this.props.title}</span></p>}
-						{this.props.actors && <p className="error">Actors: <span className="apiSpan">{this.props.actors}</span></p>}
-						{this.props.country && <p className="error">Country: <span className="apiSpan">{this.props.country}</span></p>}
-						{this.props.writer && <p className="error">Writer: <span className="apiSpan">{this.props.writer}</span></p>}
-						{this.props.error && <p className="error">{this.props.error}</p>}
+						<Form handleChange={props.handleInputChage} callApi={(e) => props.handleSubmit(e, props.movieName)} placeholder1="Movie" classCall="no-display"/>
+						{props.title && <p className="error">Title: <span className="apiSpan">{props.title}</span></p>}
+						{props.actors && <p className="error">Actors: <span className="apiSpan">{props.actors}</span></p>}
+						{props.country && <p className="error">Country: <span className="apiSpan">{props.country}</span></p>}
+						{props.writer && <p className="error">Writer: <span className="apiSpan">{props.writer}</span></p>}
+						{props.error && <p className="error">{props.error}</p>}
 						
 					</div>
 				</div>
 
 				
-				{this.props.ratings.length>0 && <ul>
-					{this.props.ratings.map((rating, index) => {
+				{props.ratings.length>0 && <ul>
+					{props.ratings.map((rating, index) => {
 						return <li key={index}><span className="error">{rating.Source}:</span> {rating.Value}</li>
 					})}
 				</ul>}
 
 			</div>
 		);
-	}
+	
 }
 
 

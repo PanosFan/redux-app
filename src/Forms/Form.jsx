@@ -1,29 +1,29 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import './Form.css';
 
-class Form extends Component {
-	render () {
+const Form = (props) => {
+	
 		return (
 			<div className="Form">
-				<form onSubmit={this.props.callApi}>
-					<input onChange={this.props.handleChange} type="text" name="mainName" placeholder={this.props.placeholder1}/>	
+				<form onSubmit={props.callApi}>
+					<input onChange={props.handleChange} type="text" name="mainName" placeholder={props.placeholder1}/>	
 					<br/>
 
-					<input onChange={this.props.handleChange2} className={this.props.classCall} type="text" name="mainCountry" placeholder={this.props.placeholder2}/>	
-					<br className={this.props.classCall} />
+					<input onChange={props.handleChange2} className={props.classCall} type="text" name="mainCountry" placeholder={props.placeholder2}/>	
+					<br className={props.classCall} />
 
-					<select onChange={this.props.handleChange3} name="units" className={this.props.classCall}>
+					<select onChange={props.handleChange3} name="units" className={props.classCall}>
 						<option value="metric">Metric</option>
   						<option value="imperial">Imperial</option>
 					</select>
 
-					<br className={this.props.classCall} />
+					<br className={props.classCall} />
 					<button type="submit">Submit</button>
 				</form>
 			</div>
 		);
-	}
+	
 }
 
 export default Form;

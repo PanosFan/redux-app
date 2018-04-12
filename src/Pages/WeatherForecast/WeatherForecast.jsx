@@ -6,55 +6,6 @@ import action from './action';
 
 const WeatherForecast = (props) => {
 
-	// props = {
-	// 	error : undefined,
-	// 	name : undefined,
-	// 	population : undefined,
-	// 	array : []
-	// }
-
-	// callApi = (e) => {
-	// 	e.preventDefault();
-
-	// 	const API_KEY="3a52a27570d5f406e3d262754a68256b";
-	// 	const city = e.target.elements.mainName.value;
-	// 	const country = e.target.elements.mainCountry.value;
-	// 	const unit = e.target.elements.units.value;
-
-	// 	if (city && country) {
-	// 		axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=${unit}&appid=${API_KEY}`)
-	// 		.then(res => {
-	// 			console.log(res)
-	// 			setprops({
-	// 				error : undefined,
-	// 				array : res.data.list,
-	// 				name : res.data.city.name,
-	// 				population : res.data.city.population
-	// 			});
-	// 		})
-	// 		.catch(error => {
-	// 			console.log(error)
-	// 			setprops({
-	// 				error : "Location not found",
-	// 				name : undefined,
-	// 				population : undefined,
-	// 				array : []
-	// 			});
-	// 		})
-
-	// 	}
-	// 	else
-	// 	{
-	// 		setprops({
-	// 			error : "Please enter values",
-	// 			name : undefined,
-	// 			population : undefined,
-	// 			array : []
-	// 		});
-	// 	}
-	// }
-
-
 		return(
 			<div className="WeatherForecast container-fluid">
 				<div className="row">

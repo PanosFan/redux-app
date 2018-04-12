@@ -10,7 +10,7 @@ function doCall (dispatch, city_input, country_input, unit_input) {
         type: 'GET_FC_WEATHER',
         array: response.data.list,
         city: response.data.city.name,
-        special_unit:unit_input
+        special_unit: unit_input
       })					
     })
     .catch(err => {

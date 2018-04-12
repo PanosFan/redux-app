@@ -72,11 +72,11 @@ const WeatherForecast = (props) => {
 							return (								
 								<div className="col-sm-2 kek" key={index}>
 									<span className="error">{item.dt_txt}</span> 
-									<div>Temp: {item.main.temp} &#x2103;</div>
-									<div>Min temp: {item.main.temp_min}</div>
-									<div>Max temp: {item.main.temp_max}</div>
+									<div>Temp: {item.main.temp}{props.special_unit==="metric" ? <span>&#x2103;</span> : <span>&#x2109;</span>}</div>
+									<div>Min temp: {item.main.temp_min}{props.special_unit==="metric" ? <span>&#x2103;</span> : <span>&#x2109;</span>}</div>
+									<div>Max temp: {item.main.temp_max}{props.special_unit==="metric" ? <span>&#x2103;</span> : <span>&#x2109;</span>}</div>
 									<div>Description: {item.weather[0].description}</div>
-									<div>Wind: {item.wind.speed}</div>
+									<div>Wind: {item.wind.speed} {props.special_unit==="metric" ? <span>m/s</span> : <span>m/h</span>}</div>
 									<div>Humidity: {item.main.humidity}%</div>
 								</div>								
 							)	
@@ -94,7 +94,7 @@ const WeatherForecast = (props) => {
 
 const MapStateToProps = (state) => {
 	return {
-		special_init: state.weatherForecastReducer.special_unit,
+		special_unit: state.weatherForecastReducer.special_unit,
 		city_input: state.weatherForecastReducer.city_input,
 		country_input: state.weatherForecastReducer.country_input,
 		unit_input: state.weatherForecastReducer.unit_input,

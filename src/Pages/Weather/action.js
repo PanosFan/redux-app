@@ -14,7 +14,7 @@ function doCall (dispatch, city_input, country_input, unit_input) {
         humidity: response.data.main.humidity,
         description: response.data.weather[0].description,			    	
         wind_speed: response.data.wind.speed,
-        special_unit:unit_input
+        special_unit: unit_input
       })					
     })
     .catch(err => {
